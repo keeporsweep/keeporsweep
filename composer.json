@@ -1,0 +1,15 @@
+{
+    "name": "Random Declutter",
+    "description": "Tinder for stuff",
+    "type": "project",
+    "license": "AGPL",
+    "authors": [
+        {
+            "name": "Martin Stadler"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^5.4"
+    }
+}

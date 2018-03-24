@@ -1,4 +1,5 @@
 <?php
+script('randomdeclutter', 'vue');
 script('randomdeclutter', 'script');
 style('randomdeclutter', 'style');
 ?>

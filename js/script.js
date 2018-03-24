@@ -5,13 +5,15 @@ var RandomDeclutter = RandomDeclutter || {};
 
 	var Manager = function() {
 		this.filesClient = OC.Files.getClient();
-
-		this._loadList();
 	};
 
 	Manager.prototype = {
 
 		_currentIndex: 0,
+
+		load: function() {
+			return this._loadList();
+		},
 
 		_loadList: function() {
 			var self = this;
@@ -34,6 +36,24 @@ var RandomDeclutter = RandomDeclutter || {};
 
 	}
 
-	exports.manager = new Manager();
+	var manager = new Manager();
+
+	var app = new Vue({
+		el: '#randomdeclutter-app',
+		data: {
+			file: {}
+		},
+		methods: {
+			next: function() {
+				var file = manager.next();
+				if (file) {
+					this.file = file;
+				}
+			}
+		}
+	});
+
+	manager.load()
+	.then(app.next);
 
 })(window, OC, RandomDeclutter);

@@ -3,7 +3,9 @@ var RandomDeclutter = RandomDeclutter || {};
 (function(window, OC, exports, undefined) {
 	'use strict';
 
-	var Manager = function() {};
+	var Manager = function() {
+		this.filesClient = OC.Files.getClient();
+	};
 
 	Manager.prototype = {
 
@@ -31,6 +33,10 @@ var RandomDeclutter = RandomDeclutter || {};
 			}
 
 			return this._list[this._currentIndex++];
+		},
+
+		removeFile: function(path) {
+			this.filesClient.remove(path);
 		}
 
 	}
@@ -48,6 +54,11 @@ var RandomDeclutter = RandomDeclutter || {};
 				if (file) {
 					this.file = file;
 				}
+			},
+			remove: function() {
+				var path = this.file.path;
+				manager.removeFile(path);
+				this.next();
 			}
 		}
 	});

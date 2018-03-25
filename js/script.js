@@ -56,7 +56,7 @@ var RandomDeclutter = RandomDeclutter || {};
 				}
 			},
 			remove: function() {
-				var path = this.file.path;
+				var path = this.file.path + this.file.name;
 				manager.removeFile(path);
 				this.next();
 			}

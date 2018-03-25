@@ -14,7 +14,7 @@ class ApiController extends Controller {
 		$files = $this->getFilesRecursive();
 		$results = \OCA\Files\Helper::formatFileInfos($files);
 		foreach ($results as $key => $result) {
-			$path = Filesystem::getView()->getRelativePath($files[$key]->getPath());
+			$path = $this->getRelativePath($files[$key]->getPath());
 			$results[$key]['path'] = $path;
 		}
 		
@@ -32,6 +32,11 @@ class ApiController extends Controller {
 		}
 
 		return $results;
+	}
+
+	private function getRelativePath($path) {
+		$path = Filesystem::getView()->getRelativePath($path);
+		return substr($path, 0, strlen($path) - strlen(basename($path)));
 	}
 
 }

@@ -1,4 +1,4 @@
 <div id="randomdeclutter-app">
-	<div>{{ file.name }}</div>
+	<div>{{ file.path }}</div>
 	<button v-on:click="next">Next</button>
 </div>

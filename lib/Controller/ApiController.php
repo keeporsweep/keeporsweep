@@ -12,9 +12,12 @@ class ApiController extends Controller {
 	 */
 	public function files() {
 		$files = $this->getFilesRecursive();
-		$files = \OCA\Files\Helper::formatFileInfos($files);
+		$results = \OCA\Files\Helper::formatFileInfos($files);
+		foreach ($results as $key => $result) {
+			$results[$key]['path'] = $files[$key]->getPath();
+		}
 		
-		return new DataResponse($files);
+		return new DataResponse($results);
 	}
 
 	private function getFilesRecursive(& $results = [], $path = '') {

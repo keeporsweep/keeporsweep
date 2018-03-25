@@ -3,9 +3,7 @@ var RandomDeclutter = RandomDeclutter || {};
 (function(window, OC, exports, undefined) {
 	'use strict';
 
-	var Manager = function() {
-		this.filesClient = OC.Files.getClient();
-	};
+	var Manager = function() {};
 
 	Manager.prototype = {
 
@@ -18,9 +16,10 @@ var RandomDeclutter = RandomDeclutter || {};
 		_loadList: function() {
 			var self = this;
 
+			var baseUrl = OC.generateUrl('/apps/randomdeclutter');
 			return (
-				this.filesClient.getFolderContents('/Photos')
-				.then(function(status, result) {
+				$.getJSON(baseUrl + '/files')
+				.then(function(result) {
 					self._list = _.shuffle(result);
 				})
 			);

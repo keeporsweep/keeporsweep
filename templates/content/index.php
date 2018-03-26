@@ -1,7 +1,7 @@
 <div id="randomdeclutter-app">
 	<div class="element-container">
 		<div class="element-preview icon-category-multimedia"></div>
-		<div class="element-name"><strong>{{ file.name }}</strong></div>
+		<div class="element-name">{{ file.name }}</div>
 		<div class="element-detail">{{ file.path }}</div>
 	</div>
 	<div class="action-container">

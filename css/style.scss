@@ -12,22 +12,26 @@
 	background-color: #fff;
 	filter: drop-shadow(0 1px 2px $color-box-shadow);
 	border-radius: $border-radius;
-	min-height: 250px;
-	min-width: 200px;
+	height: 320px;
+	width: 250px;
 	margin-bottom: 16px;
 }
 
 .element-preview {
-	min-height: 200px;
+	min-height: 250px;
 	background-size: 64px;
 }
 
 .element-name,
 .element-detail {
 	padding: 12px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .element-name {
+	font-weight: bold;
 	padding-bottom: 6px;
 }
 
@@ -41,17 +45,35 @@
 	width: 70px;
 	height: 70px;
 	padding: 16px;
-	padding-top: 32px;
+	padding-top: 42px;
 	color: #fff;
-	background-position: center 16px !important;
+	background-size: 32px;
+	background-position: center 12px !important;
 	border-radius: 50%;
+	border: none;
 }
 
 .action-remove {
 	background-color: $color-error;
+
+	&:hover,
+	&:focus {
+		background-color: nc-darken($color-error, 5%);
+	}
+	&:active {
+		background-color: nc-darken($color-error, 10%) !important;
+	}
 }
 
 .action-keep {
 	background-color: $color-success;
 	margin-left: 32px;
+
+	&:hover,
+	&:focus {
+		background-color: nc-darken($color-success, 5%);
+	}
+	&:active {
+		background-color: nc-darken($color-success, 10%) !important;
+	}
 }

@@ -66,14 +66,14 @@
 }
 
 .action-keep {
-	background-color: $color-success;
+	background-color: $color-primary;
 	margin-left: 32px;
 
 	&:hover,
 	&:focus {
-		background-color: nc-darken($color-success, 5%);
+		background-color: nc-darken($color-primary, 5%);
 	}
 	&:active {
-		background-color: nc-darken($color-success, 10%) !important;
+		background-color: nc-darken($color-primary, 10%) !important;
 	}
 }

@@ -2,7 +2,7 @@ var RandomDeclutter = RandomDeclutter || {};
 
 (function(window, OC, exports, undefined) {
 	'use strict';
-
+	
 	var Manager = function() {
 		this.filesClient = OC.Files.getClient();
 	};
@@ -22,11 +22,21 @@ var RandomDeclutter = RandomDeclutter || {};
 			return (
 				$.getJSON(baseUrl + '/files')
 				.then(function(result) {
-					self._list = _.shuffle(result);
+					self._list = _.shuffle(result);                                        
 				})
 			);
 		},
+                _loadPreview: function(path) {
+			var self = this;
 
+			var previewUrl = OC.generateUrl('/core/preview.png?') + path;
+			return (
+				$.getJSON(previewUrl)
+				.then(function(result) {
+					return result;                                        
+				})
+			);
+		},
 		next: function() {
 			if (this._currentIndex >= this._list.length) {
 				return;
@@ -50,11 +60,20 @@ var RandomDeclutter = RandomDeclutter || {};
 			file: {}
 		},
 		methods: {
+			preview: function() {
+                                    var file = manager.next();                                
+                                    manager._loadPreview(file.path).then(
+                                        this.
+                                        this.file = file;
+                                    )                                    
+				}				
+			},                    
 			next: function() {
-				var file = manager.next();
+				var file = manager.next();                                
 				if (file) {
-					this.file = file;
-				}
+                                        file.preview = manager._loadPreview(file.path);                                   
+					this.file = file;                                       
+				}				
 			},
 			remove: function() {
 				var path = this.file.path + this.file.name;
@@ -68,6 +87,6 @@ var RandomDeclutter = RandomDeclutter || {};
 	});
 
 	manager.load()
-	.then(app.next);
+	.then(app.preview);
 
 })(window, OC, RandomDeclutter);

@@ -1,6 +1,6 @@
 <div id="randomdeclutter-app" class="animated bounceInUp">
 	<div class="element-container">
-		<div class="element-preview icon-category-multimedia"></div>
+		<div class="element-preview">{{ file.preview }}</div>
 		<div class="element-name">{{ file.name }}</div>
 		<div class="element-detail icon-folder">{{ file.path }}</div>
 	</div>

@@ -26,23 +26,24 @@ var RandomDeclutter = RandomDeclutter || {};
 				})
 			);
 		},
-                _loadPreview: function(path) {
+                _loadPreview: function(index) {
 			var self = this;
-
-			var previewUrl = OC.generateUrl('/core/preview.png?') + path;
-			return (
-				$.getJSON(previewUrl)
-				.then(function(result) {
-					return result;                                        
-				})
-			);
+                        
+                        var params = '?fileId='+this._list[index].id+'&x=32&y=32&forceIcon=0';
+                        var img = new Image();
+			var previewUrl = OC.generateUrl('/core/preview') + params;
+                        img.onload = function() {
+                            $('.element-preview').attr('style', 'background-image:url(' + previewUrl + ')');
+                        }
+                        img.src = previewUrl;
 		},
-		next: function() {
+                next: function() {
 			if (this._currentIndex >= this._list.length) {
 				return;
 			}
-
-			return this._list[this._currentIndex++];
+			var index = this._currentIndex++;
+                        this._loadPreview(index);
+                        return this._list(index);
 		},
 
 		removeFile: function(path) {
@@ -61,19 +62,10 @@ var RandomDeclutter = RandomDeclutter || {};
 			actionKeepHover: false,
 			actionRemoveHover: false
 		},
-		methods: {
-			preview: function() {
-                                    var file = manager.next();                                
-                                    manager._loadPreview(file.path).then(
-                                        this.
-                                        this.file = file;
-                                    )                                    
-				}				
-			},                    
+		methods: {           
 			next: function() {
 				var file = manager.next();                                
-				if (file) {
-                                        file.preview = manager._loadPreview(file.path);                                   
+				if (file) {                                 
 					this.file = file;                                       
 				}				
 			},
@@ -86,6 +78,6 @@ var RandomDeclutter = RandomDeclutter || {};
 	});
 
 	manager.load()
-	.then(app.preview);
+	.then(app.next);
 
 })(window, OC, RandomDeclutter);

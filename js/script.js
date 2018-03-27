@@ -47,7 +47,9 @@ var RandomDeclutter = RandomDeclutter || {};
 		el: '#randomdeclutter-app',
 		container: '#randomdeclutter-app .element-container',
 		data: {
-			file: {}
+			file: {},
+			actionKeepHover: false,
+			actionRemoveHover: false
 		},
 		methods: {
 			next: function() {
@@ -60,9 +62,6 @@ var RandomDeclutter = RandomDeclutter || {};
 				var path = this.file.path + this.file.name;
 				manager.removeFile(path);
 				this.next();
-			},
-			pulse: function() {
-				this.addClass('animated pulse');
 			}
 		}
 	});

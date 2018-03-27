@@ -2,6 +2,7 @@
 script('randomdeclutter', 'vue');
 script('randomdeclutter', 'script');
 style('randomdeclutter', 'style');
+style('randomdeclutter', 'animate.min');
 ?>
 
 <div id="app">
@@ -11,4 +12,3 @@ style('randomdeclutter', 'style');
 		</div>
 	</div>
 </div>
-

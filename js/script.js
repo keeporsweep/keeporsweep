@@ -26,30 +26,32 @@ var RandomDeclutter = RandomDeclutter || {};
 				})
 			);
 		},
-                _loadPreview: function(index) {
-			var self = this;
 
-                        var params = '?fileId='+this._list[index].id+'&x=250&y=250&forceIcon=0';
-                        var img = new Image();
+		_loadPreview: function(index) {
+			var self = this;
+			var params = '?fileId='+this._list[index].id+'&x=250&y=250&forceIcon=0';
+			var img = new Image();
 			var previewUrl = OC.generateUrl('/core/preview') + params;
-                        img.onload = function() {
-                            $('.element-preview').attr('style', 'background-image:url(' + previewUrl + ')');
-                        }
-                        img.src = previewUrl;
+
+			img.onload = function() {
+				$('.element-preview').attr('style', 'background-image:url(' + previewUrl + ')');
+			}
+			img.src = previewUrl;
 		},
-                next: function() {
+
+    	next: function() {
 			if (this._currentIndex >= this._list.length) {
 				return;
 			}
+
 			var index = this._currentIndex++;
-                        this._loadPreview(index);
-                        return this._list(index);
+			this._loadPreview(index);
+			return this._list(index);
 		},
 
 		removeFile: function(path) {
 			this.filesClient.remove(path);
 		}
-
 	}
 
 	var manager = new Manager();

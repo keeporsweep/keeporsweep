@@ -11,6 +11,9 @@ var RandomDeclutter = RandomDeclutter || {};
 	Manager.prototype = {
 
 		_currentIndex: 0,
+		_containerBefore: 4,
+		_containerCurrent: 1,
+		_containerAfter: 2,
 
 		load: function() {
 			return this._loadList();
@@ -45,18 +48,66 @@ var RandomDeclutter = RandomDeclutter || {};
                         };
                         img.src = previewUrl;
 		},
-                next: function() {
-			if (this._currentIndex >= this._list.length) {
-				return;
-			}
 
+		nextElement: function() {
 			var index = this._currentIndex++;
 			this._loadPreview(index);
 			return this._list[index];
 		},
 
-		removeFile: function(path) {
+		keepElement: function() {
+			if (this._currentIndex > this._list.length) {
+				return;
+			}
+
+			this.moveContainer('Right');
+		},
+
+		removeElement: function(path) {
+			if (this._currentIndex > this._list.length) {
+				return;
+			}
+
+			this.moveContainer('Left');
 			this.filesClient.remove(path);
+		},
+
+		moveContainer: function(direction) {
+			if(this._currentIndex == 0) {
+				return;
+			}
+
+			if(this._containerCurrent > 4) {
+				this._containerCurrent = 1;
+			}
+			if(this._containerBefore > 4) {
+				this._containerBefore = 1;
+			}
+			if(this._containerAfter > 4) {
+				this._containerAfter = 1;
+			}
+
+			// Move card out in specified direction
+			$('.element-container-' + this._containerCurrent)
+				.removeClass('fadeIn active')
+				.addClass('bounceOut' + direction);
+
+			// Card on the bottom of the stack gets cleaned up
+			// Emptycontent is shown when stack is over
+			if(!(this._currentIndex >= (this._list.length-2))) {
+				$('.element-container-' + (this._containerBefore))
+					.removeClass('bounceOutRight bounceOutLeft')
+					.addClass('fadeIn')
+					.attr('style', 'z-index: -' + this._currentIndex);
+			}
+
+			// Next card set as active
+			$('.element-container-' + (this._containerAfter))
+				.addClass('active');
+
+			this._containerCurrent++;
+			this._containerBefore++;
+			this._containerAfter++;
 		}
 	}
 
@@ -72,14 +123,18 @@ var RandomDeclutter = RandomDeclutter || {};
 		},
 		methods: {
 			next: function() {
-				var file = manager.next();
-				if (file) {
+				var file = manager.nextElement();
+				if(file) {
 					this.file = file;
 				}
 			},
+			keep: function() {
+				manager.keepElement();
+				this.next();
+			},
 			remove: function() {
 				var path = this.file.path + this.file.name;
-				manager.removeFile(path);
+				manager.removeElement(path);
 				this.next();
 			}
 		}

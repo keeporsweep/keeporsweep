@@ -2,7 +2,7 @@ var RandomDeclutter = RandomDeclutter || {};
 
 (function(window, OC, exports, undefined) {
 	'use strict';
-	
+
 	var Manager = function() {
 		this.filesClient = OC.Files.getClient();
 	};
@@ -22,14 +22,14 @@ var RandomDeclutter = RandomDeclutter || {};
 			return (
 				$.getJSON(baseUrl + '/files')
 				.then(function(result) {
-					self._list = _.shuffle(result);                                        
+					self._list = _.shuffle(result);
 				})
 			);
 		},
                 _loadPreview: function(index) {
 			var self = this;
-                        
-                        var params = '?fileId='+this._list[index].id+'&x=32&y=32&forceIcon=0';
+
+                        var params = '?fileId='+this._list[index].id+'&x=250&y=250&forceIcon=0';
                         var img = new Image();
 			var previewUrl = OC.generateUrl('/core/preview') + params;
                         img.onload = function() {
@@ -62,12 +62,12 @@ var RandomDeclutter = RandomDeclutter || {};
 			actionKeepHover: false,
 			actionRemoveHover: false
 		},
-		methods: {           
+		methods: {
 			next: function() {
-				var file = manager.next();                                
-				if (file) {                                 
-					this.file = file;                                       
-				}				
+				var file = manager.next();
+				if (file) {
+					this.file = file;
+				}
 			},
 			remove: function() {
 				var path = this.file.path + this.file.name;

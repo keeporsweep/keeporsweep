@@ -29,7 +29,7 @@ var RandomDeclutter = RandomDeclutter || {};
 
 		_loadPreview: function(index) {
 			var self = this;
-			var params = '?fileId='+this._list[index].id+'&x=250&y=250&forceIcon=0';
+			var params = '?fileId='+this._list[index].id+'&x=500&y=500&forceIcon=0';
 			var img = new Image();
 			var previewUrl = OC.generateUrl('/core/preview') + params;
 

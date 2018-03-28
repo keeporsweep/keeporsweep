@@ -26,30 +26,30 @@ var RandomDeclutter = RandomDeclutter || {};
 				})
 			);
 		},
-                _loadPreview: function(index) {
+		_loadPreview: function(index) {
 			var self = this;
-                        
-                        var params = '?fileId='+this._list[index].id+'&x=32&y=32&forceIcon=0';
-                        var img = new Image();
+			var params = '?fileId='+this._list[index].id+'&x=500&y=500&forceIcon=0';
+			var img = new Image();
 			var previewUrl = OC.generateUrl('/core/preview') + params;
-                        img.onload = function() {
-                            $('.element-preview').attr('style', 'background-image:url(' + previewUrl + ')');
-                        }
-                        img.src = previewUrl;
+
+			img.onload = function() {
+				$('.element-preview').attr('style', 'background-image:url(' + previewUrl + ')');
+			}
+			img.src = previewUrl;
 		},
                 next: function() {
 			if (this._currentIndex >= this._list.length) {
 				return;
 			}
+
 			var index = this._currentIndex++;
-                        this._loadPreview(index);
-                        return this._list(index);
+			this._loadPreview(index);
+			return this._list[index];
 		},
 
 		removeFile: function(path) {
 			this.filesClient.remove(path);
 		}
-
 	}
 
 	var manager = new Manager();
@@ -58,7 +58,9 @@ var RandomDeclutter = RandomDeclutter || {};
 		el: '#randomdeclutter-app',
 		container: '#randomdeclutter-app .element-container',
 		data: {
-			file: {}
+			file: {},
+			actionKeepHover: false,
+			actionRemoveHover: false
 		},
 		methods: {           
 			next: function() {
@@ -71,9 +73,6 @@ var RandomDeclutter = RandomDeclutter || {};
 				var path = this.file.path + this.file.name;
 				manager.removeFile(path);
 				this.next();
-			},
-			pulse: function() {
-				this.addClass('animated pulse');
 			}
 		}
 	});

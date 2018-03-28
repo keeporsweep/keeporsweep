@@ -23,7 +23,9 @@
 
 .element-preview {
 	min-height: 250px;
-	background-size: 64px;
+	background-size: 250px;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 .element-name,

@@ -5,7 +5,7 @@ var RandomDeclutter = RandomDeclutter || {};
 
 	var Manager = function() {
 		this.filesClient = OC.Files.getClient();
-                this.previewSize = 500;
+		this.previewSize = 500;
 	};
 
 	Manager.prototype = {
@@ -31,22 +31,22 @@ var RandomDeclutter = RandomDeclutter || {};
 		},
 		_loadPreview: function(index) {
 			var self = this;
-                        var params = {
-                            fileId: self._list[index].id,
-                            x: self.previewSize,
-                            y: self.previewSize,
-                            forceIcon: 0
-                        };
+			var params = {
+				fileId: self._list[index].id,
+				x: self.previewSize,
+				y: self.previewSize,
+				forceIcon: 0
+			};
 			var img = new Image();
 			var previewUrl = OC.generateUrl('/core/preview?') + $.param(params);
 			img.onload = function() {
-                            $('.element-preview').attr('style', 'background-image:url(' + previewUrl + ')');
+				$('.element-preview').attr('style', 'background-image:url(' + previewUrl + ')');
 			};
-                        img.onerror = function(){
-                            previewUrl = OC.MimeType.getIconUrl(self._list[index].mimetype);
-                            $('.element-preview').attr('style', 'background-image:url(' + previewUrl + ')');
-                        };
-                        img.src = previewUrl;
+			img.onerror = function(){
+				previewUrl = OC.MimeType.getIconUrl(self._list[index].mimetype);
+				$('.element-preview').attr('style', 'background-image:url(' + previewUrl + ')');
+			};
+			img.src = previewUrl;
 		},
 
 		nextElement: function() {

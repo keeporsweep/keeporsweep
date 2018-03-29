@@ -18,6 +18,7 @@ var RandomDeclutter = RandomDeclutter || {};
 		load: function() {
 			return this._loadList();
 		},
+
 		_loadList: function() {
 			var self = this;
 
@@ -29,6 +30,11 @@ var RandomDeclutter = RandomDeclutter || {};
 				})
 			);
 		},
+
+                _onPreviewLoad: function(url){
+                    $('.element-preview').attr('style', 'background-image:url(' + url + ')');
+                },
+
 		_loadPreview: function(index) {
 			var self = this;
 			var params = {
@@ -37,16 +43,23 @@ var RandomDeclutter = RandomDeclutter || {};
 				y: self.previewSize,
 				forceIcon: 0
 			};
-			var img = new Image();
-			var previewUrl = OC.generateUrl('/core/preview?') + $.param(params);
-			img.onload = function() {
-				$('.element-preview').attr('style', 'background-image:url(' + previewUrl + ')');
-			};
-			img.onerror = function(){
-				previewUrl = OC.MimeType.getIconUrl(self._list[index].mimetype);
-				$('.element-preview').attr('style', 'background-image:url(' + previewUrl + ')');
-			};
-			img.src = previewUrl;
+
+			// Default
+			var iconImg = new Image();
+			const iconUrl = OC.MimeType.getIconUrl(self._list[index].mimetype);
+			iconImg.src = iconUrl;
+			$('.element-preview').attr('style', 'background-image:url(' + iconUrl + ')');
+
+			// Try to get the preview if it is an image or a text file
+			if(self._list[index].mimetype == 'image/jpeg' ||
+				self._list[index].mimetype == 'image/png' ||
+				self._list[index].mimetype == 'image/gif' ||
+				self._list[index].mimetype == 'text/plain'){
+				var previewImg = new Image();
+				const previewUrl = OC.generateUrl('/core/preview?') + $.param(params);
+				previewImg.onload = self._onPreviewLoad(previewUrl);
+				previewImg.src = previewUrl;
+			}
 		},
 
 		nextElement: function() {

@@ -67,6 +67,10 @@
 	background-size: 250px;
 	background-repeat: no-repeat;
 	background-position: center;
+
+	&.element-preview-icon {
+		background-size: 128px;
+	}
 }
 
 .element-name,

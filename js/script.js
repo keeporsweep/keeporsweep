@@ -5,7 +5,6 @@ var RandomDeclutter = RandomDeclutter || {};
 
 	var Manager = function() {
 		this.filesClient = OC.Files.getClient();
-		this.previewSize = 500;
 	};
 
 	Manager.prototype = {
@@ -14,6 +13,8 @@ var RandomDeclutter = RandomDeclutter || {};
 		_containerBefore: 4,
 		_containerCurrent: 1,
 		_containerAfter: 2,
+		_containerActive: 'div.active div.element-preview',
+		_previewSize: 500,
 
 		load: function() {
 			return this._loadList();
@@ -32,15 +33,15 @@ var RandomDeclutter = RandomDeclutter || {};
 		},
 
                 _onPreviewLoad: function(url){
-                    $('.element-preview').attr('style', 'background-image:url(' + url + ')');
+			$(this._containerActive).attr('style', 'background-image:url(' + url + ')');
                 },
 
 		_loadPreview: function(index) {
 			var self = this;
 			var params = {
 				fileId: self._list[index].id,
-				x: self.previewSize,
-				y: self.previewSize,
+				x: this._previewSize,
+				y: this._previewSize,
 				forceIcon: 0
 			};
 
@@ -48,7 +49,7 @@ var RandomDeclutter = RandomDeclutter || {};
 			var iconImg = new Image();
 			const iconUrl = OC.MimeType.getIconUrl(self._list[index].mimetype);
 			iconImg.src = iconUrl;
-			$('.element-preview').attr('style', 'background-image:url(' + iconUrl + ')');
+			$(this._containerActive).attr('style', 'background-image:url(' + iconUrl + ')');
 
 			// Try to get the preview if it is an image or a text file
 			if(self._list[index].mimetype == 'image/jpeg' ||
@@ -64,7 +65,7 @@ var RandomDeclutter = RandomDeclutter || {};
 
 		nextElement: function() {
 			var index = this._currentIndex++;
-			this._loadPreview(index);
+			if(this._list[index]) this._loadPreview(index);
 			return this._list[index];
 		},
 
@@ -86,6 +87,8 @@ var RandomDeclutter = RandomDeclutter || {};
 		},
 
 		moveContainer: function(direction) {
+			const container = '.element-container-';
+
 			if(this._currentIndex == 0) {
 				return;
 			}
@@ -101,24 +104,24 @@ var RandomDeclutter = RandomDeclutter || {};
 			}
 
 			// Move card out in specified direction
-			$('.element-container-' + this._containerCurrent)
+			$(container + this._containerCurrent)
 				.removeClass('fadeIn active')
 				.addClass('bounceOut' + direction);
 
 			// Card on the bottom of the stack gets cleaned up
 			// Emptycontent is shown when stack is over
 			if(!(this._currentIndex >= (this._list.length-2))) {
-				$('.element-container-' + (this._containerBefore))
+				$(container + (this._containerBefore))
 					.removeClass('bounceOutRight bounceOutLeft')
 					.addClass('fadeIn')
 					.attr('style', 'z-index: -' + this._currentIndex);
 			}
 
 			// Next card set as active
-			$('.element-container-' + (this._containerAfter))
+			$(container + (this._containerAfter))
 				.addClass('active');
 
-			this._containerCurrent++;
+			this._containerCurrent++
 			this._containerBefore++;
 			this._containerAfter++;
 		}

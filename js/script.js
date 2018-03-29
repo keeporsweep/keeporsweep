@@ -13,13 +13,12 @@ var RandomDeclutter = RandomDeclutter || {};
 		_containerBefore: 4,
 		_containerCurrent: 1,
 		_containerAfter: 2,
-		_containerActive: 'div.active div.element-preview',
+		_containerActive: '.active .element-preview',
 		_previewSize: 500,
 
 		load: function() {
 			return this._loadList();
 		},
-
 		_loadList: function() {
 			var self = this;
 
@@ -31,11 +30,9 @@ var RandomDeclutter = RandomDeclutter || {};
 				})
 			);
 		},
-
                 _onPreviewLoad: function(url){
 			$(this._containerActive).attr('style', 'background-image:url(' + url + ')');
                 },
-
 		_loadPreview: function(index) {
 			var self = this;
 			var params = {
@@ -121,7 +118,7 @@ var RandomDeclutter = RandomDeclutter || {};
 			$(container + (this._containerAfter))
 				.addClass('active');
 
-			this._containerCurrent++
+			this._containerCurrent++;
 			this._containerBefore++;
 			this._containerAfter++;
 		}

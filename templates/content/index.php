@@ -1,4 +1,4 @@
-<div id="randomdeclutter-app" class="animated bounceInUp">
+<div id="keeporsweep-app" class="animated bounceInUp">
 	<div class="element-container element-container-1 animated active">
 		<div class="element-preview"></div>
 		<div class="element-name">{{ file.name }}</div>
@@ -25,9 +25,9 @@
 		<div class="element-detail">Refresh to go through your data again</div>
 	</div>
 	<div class="action-container">
-		<button v-on:click="remove"
-			v-on:mouseover="actionRemoveHover = true" v-on:mouseout="actionRemoveHover = false" :class="{'animated tada': actionRemoveHover}"
-			class="action-remove icon-close-white">Nah</button>
+		<button v-on:click="sweep"
+			v-on:mouseover="actionSweepHover = true" v-on:mouseout="actionSweepHover = false" :class="{'animated tada': actionSweepHover}"
+			class="action-sweep icon-close-white">Sweep</button>
 		<button v-on:click="keep"
 			v-on:mouseover="actionKeepHover = true" v-on:mouseout="actionKeepHover = false" :class="{'animated pulse': actionKeepHover}"
 			class="action-keep icon-checkmark-white">Keep</button>

@@ -1,5 +1,5 @@
 <?php
-namespace OCA\RandomDeclutter\Controller;
+namespace OCA\KeepOrSweep\Controller;
 
 use OCP\IRequest;
 use OCP\AppFramework\Http\TemplateResponse;
@@ -25,7 +25,7 @@ class PageController extends Controller {
 	 * @NoCSRFRequired
 	 */
 	public function index() {
-		return new TemplateResponse('randomdeclutter', 'index');  // templates/index.php
+		return new TemplateResponse('keeporsweep', 'index');  // templates/index.php
 	}
 
 }

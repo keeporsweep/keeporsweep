@@ -1,5 +1,5 @@
 <?php
-namespace OCA\RandomDeclutter\Controller;
+namespace OCA\KeepOrSweep\Controller;
 
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\DataResponse;

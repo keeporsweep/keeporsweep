@@ -1,28 +1,29 @@
 <?xml version="1.0"?>
 <info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
-    <id>randomdeclutter</id>
-    <name>Random Declutter</name>
+    <id>keeporsweep</id>
+    <name>Keep or Sweep</name>
     <summary>☁️🔀🗑️ Randomly clean your Nextcloud data</summary>
     <description><![CDATA[**Tech companies help you amass data – we help you clean it**
 
-    Have fun while cleaning up your digital life]]></description>
+    Have fun while decluttering your digital life, randomly!]]></description>
     <version>0.0.1</version>
     <licence>AGPL</licence>
     <author mail="martin@siarp.de" >Martin Stadler</author>
     <author mail="hey@jancborchardt.net" homepage="http://jancborchardt.net">Jan-Christoph Borchardt</author>
-    <namespace>RandomDeclutter</namespace>
-	<category>productivity</category>
+    <author mail="hello@camila.codes">Camila San</author>
+    <namespace>KeepOrSweep</namespace>
+    <category>productivity</category>
     <category>games</category>
-    <bugs>https://github.com/randomdeclutter/randomdeclutter/issues</bugs>
-    <repository type="git">https://github.com/randomdeclutter/randomdeclutter.git</repository>
+    <bugs>https://github.com/keeporsweep/keeporsweep/issues</bugs>
+    <repository type="git">https://github.com/keeporsweep/keeporsweep.git</repository>
     <dependencies>
         <nextcloud min-version="13" max-version="14"/>
     </dependencies>
     <navigations>
         <navigation>
-            <name>Random Declutter</name>
-            <route>randomdeclutter.page.index</route>
+            <name>Keep or Sweep</name>
+            <route>keeporsweep.page.index</route>
         </navigation>
     </navigations>
 </info>

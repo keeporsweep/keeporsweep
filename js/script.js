@@ -1,4 +1,4 @@
-var RandomDeclutter = RandomDeclutter || {};
+var KeepOrSweep = KeepOrSweep || {};
 
 (function(window, OC, exports, undefined) {
 	'use strict';
@@ -22,7 +22,7 @@ var RandomDeclutter = RandomDeclutter || {};
 		_loadList: function() {
 			var self = this;
 
-			var baseUrl = OC.generateUrl('/apps/randomdeclutter');
+			var baseUrl = OC.generateUrl('/apps/keeporsweep');
 			return (
 				$.getJSON(baseUrl + '/files')
 				.then(function(result) {
@@ -74,7 +74,7 @@ var RandomDeclutter = RandomDeclutter || {};
 			this.moveContainer('Right');
 		},
 
-		removeElement: function(path) {
+		sweepElement: function(path) {
 			if (this._currentIndex > this._list.length) {
 				return;
 			}
@@ -127,12 +127,12 @@ var RandomDeclutter = RandomDeclutter || {};
 	var manager = new Manager();
 
 	var app = new Vue({
-		el: '#randomdeclutter-app',
-		container: '#randomdeclutter-app .element-container',
+		el: '#keeporsweep-app',
+		container: '#keeporsweep-app .element-container',
 		data: {
 			file: {},
 			actionKeepHover: false,
-			actionRemoveHover: false
+			actionSweepHover: false
 		},
 		methods: {
 			next: function() {
@@ -145,9 +145,9 @@ var RandomDeclutter = RandomDeclutter || {};
 				manager.keepElement();
 				this.next();
 			},
-			remove: function() {
+			sweep: function() {
 				var path = this.file.path + this.file.name;
-				manager.removeElement(path);
+				manager.sweepElement(path);
 				this.next();
 			}
 		}
@@ -156,4 +156,4 @@ var RandomDeclutter = RandomDeclutter || {};
 	manager.load()
 	.then(app.next);
 
-})(window, OC, RandomDeclutter);
+})(window, OC, KeepOrSweep);

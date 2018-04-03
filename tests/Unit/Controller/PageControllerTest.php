@@ -1,12 +1,12 @@
 <?php
 
-namespace OCA\RandomDeclutter\Tests\Unit\Controller;
+namespace OCA\KeepOrSweep\Tests\Unit\Controller;
 
 use PHPUnit_Framework_TestCase;
 
 use OCP\AppFramework\Http\TemplateResponse;
 
-use OCA\RandomDeclutter\Controller\PageController;
+use OCA\KeepOrSweep\Controller\PageController;
 
 
 class PageControllerTest extends PHPUnit_Framework_TestCase {
@@ -17,7 +17,7 @@ class PageControllerTest extends PHPUnit_Framework_TestCase {
 		$request = $this->getMockBuilder('OCP\IRequest')->getMock();
 
 		$this->controller = new PageController(
-			'randomdeclutter', $request, $this->userId
+			'keeporsweep', $request, $this->userId
 		);
 	}
 

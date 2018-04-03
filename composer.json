@@ -1,11 +1,13 @@
 {
-    "name": "Random Declutter",
-    "description": "Tinder for stuff",
+    "name": "Keep or Sweep",
+    "description": "Randomly declutter your data",
     "type": "project",
     "license": "AGPL",
     "authors": [
         {
-            "name": "Martin Stadler"
+            "name": "Martin Stadler",
+            "name": "Jan-Christoph Borchardt",
+            "name": "Camila San"
         }
     ],
     "require": {},

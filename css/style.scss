@@ -2,7 +2,7 @@
 	overflow: hidden;
 }
 
-#randomdeclutter-app {
+#keeporsweep-app {
 	padding: 1em;
 	width: 100%;
 	height: 100%;
@@ -94,8 +94,8 @@
 	opacity: .5;
 }
 
-.action-remove,
-.action-keep {
+.action-keep,
+.action-sweep {
 	width: 70px;
 	height: 70px;
 	padding: 16px;
@@ -107,7 +107,7 @@
 	border: none;
 }
 
-.action-remove {
+.action-sweep {
 	background-color: $color-error;
 
 	&:hover,

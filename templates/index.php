@@ -1,8 +1,8 @@
 <?php
-script('randomdeclutter', 'vue');
-script('randomdeclutter', 'script');
-style('randomdeclutter', 'style');
-style('randomdeclutter', 'animate.min');
+script('keeporsweep', 'vue');
+script('keeporsweep', 'script');
+style('keeporsweep', 'style');
+style('keeporsweep', 'animate.min');
 ?>
 
 <div id="app">

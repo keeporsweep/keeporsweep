@@ -1,17 +1,32 @@
-# ☁️🔀🗑️ ️Randomly declutter your Nextcloud
-
-**Tech companies help you amass data – we help you clean it**
-
-Have fun while organizing your digital life with this app. :) It will show you a random file from your Nextcloud and you decide to ✅keep or ❌sweep it.
-
-The plan is to extend this so you can also randomly clean your:
-- 💌 Mails
-- 👥 Contacts
-- 📆 Events
-- 🐦 Tweets
-- 🎉 … anything you can imagine! We have [a document with more background info](https://github.com/keeporsweep/keeporsweep.net#%EF%B8%8F-keep-or-sweep)
+<p align="center">
+    <img src="https://raw.githubusercontent.com/keeporsweep/keeporsweep.net/master/images/icon-256.png" height="128">
+</p>
+<h3 align="center"><a href="http://keeporsweep.net">Keep or Sweep</a></h3>
+<p align="center">Randomly declutter your <a href="https://nextcloud.com">Nextcloud</a>!<p>
+<p align="center">
+    <img src="https://raw.githubusercontent.com/keeporsweep/keeporsweep.net/master/images/screenshot-nextcloud.png" height="500">
+</p>
 
 
-## Installation
 
-Place this app in **nextcloud/apps/**
+## Install
+
+This is the [☁️Nextcloud app](https://apps.nextcloud.com/apps/keeporsweep). You can easily install it from inside your Nextcloud through the app management.
+
+There’s also a [desktop app for ⊞Windows, 🍏macOS & 🐧Linux](https://github.com/keeporsweep/keeporsweep-desktop#keep-or-sweep), and more info at [🔀keeporsweep.net](http://keeporsweep.net).
+
+
+
+## Contribute
+
+Contributions are always welcome! 😍 Check out the [list of issues](https://github.com/keeporsweep/keeporsweep/issues) and see what you like to contribute.
+
+
+### Development setup
+
+1. Clone this app into your `nextcloud/apps/` folder:
+```
+git clone https://github.com/keeporsweep/keeporsweep.git
+```
+2. Enable it from the apps management inside Nextcloud
+3. Get hacking 🎉

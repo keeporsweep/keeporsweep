@@ -19,7 +19,7 @@ There’s also a [desktop app for ⊞Windows, 🍏macOS & 🐧Linux](https://git
 
 ## Contribute
 
-Contributions are always welcome! 😍 Check out the [list of issues](https://github.com/keeporsweep/keeporsweep/issues) and see what you like to contribute.
+Contributions are always welcome! 😍 Check out the [list of issues](https://github.com/keeporsweep/keeporsweep/issues) and see what you like to contribute. We use [Vue.js](https://vuejs.org/) as Javascript framework and [Animate.css](https://daneden.github.io/animate.css/) for the animations.
 
 
 ### Development setup

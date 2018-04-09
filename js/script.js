@@ -36,6 +36,7 @@ var KeepOrSweep = KeepOrSweep || {};
 		_loadPreview: function(index) {
 			var self = this;
 			var params = {
+				file: self._list[index].path + self._list[index].name,
 				fileId: self._list[index].id,
 				x: this._previewSize,
 				y: this._previewSize,
@@ -54,7 +55,7 @@ var KeepOrSweep = KeepOrSweep || {};
 				self._list[index].mimetype == 'image/gif' ||
 				self._list[index].mimetype == 'text/plain'){
 				var previewImg = new Image();
-				const previewUrl = OC.generateUrl('/core/preview?') + $.param(params);
+				const previewUrl = OC.generateUrl('/core/preview.png?') + $.param(params);
 				previewImg.onload = self._onPreviewLoad(previewUrl);
 				previewImg.src = previewUrl;
 			}

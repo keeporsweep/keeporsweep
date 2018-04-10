@@ -10,14 +10,15 @@
 
         Currently this works for Files, and we have [plans to integrate many more sources](https://github.com/keeporsweep/keeporsweep.net#readme) – come join and contribute! 😍]]></description>
 
-    <version>0.1.0</version>
+    <version>0.1.1</version>
     <licence>AGPL</licence>
     <author mail="martin@siarp.de" homepage="https://xmartin.de">Martin Stadler</author>
     <author mail="hey@jancborchardt.net" homepage="http://jancborchardt.net">Jan-Christoph Borchardt</author>
     <author mail="hello@camila.codes" homepage="http://camila.codes">Camila Ayres</author>
     <namespace>KeepOrSweep</namespace>
 
-    <category>productivity</category>
+    <category>files</category>
+    <category>organization</category>
     <category>games</category>
     <category>tools</category>
 

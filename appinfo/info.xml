@@ -5,11 +5,12 @@
     <name>Keep or Sweep</name>
     <summary>☁️🔀🗑️ Randomly clean your Nextcloud data</summary>
     <description><![CDATA[![](https://raw.githubusercontent.com/keeporsweep/keeporsweep.net/master/images/icon-128.png)
+
 **Tech companies help you amass data – we help you clean it by having fun while getting things done! 😊** You will see one random element of your data at a time and you decide whether to ✅keep or ❌sweep it.
 
-Currently this works for Files, and we have [plans to integrate many more sources](https://github.com/keeporsweep/keeporsweep.net#readme) – come join and contribute! 😍]]></description>
+Currently this works for Files, and we have [plans to integrate many more sources](https://keeprosweep.net) – come join and contribute! 😍]]></description>
 
-    <version>0.1.2</version>
+    <version>0.1.3</version>
     <licence>AGPL</licence>
     <author mail="martin@siarp.de" homepage="https://xmartin.de">Martin Stadler</author>
     <author mail="hey@jancborchardt.net" homepage="http://jancborchardt.net">Jan-Christoph Borchardt</author>

@@ -6,8 +6,21 @@
     "authors": [
         {
             "name": "Martin Stadler",
+            "email": "martin@siarp.de",
+            "homepage": "https://xmartin.de",
+            "role": "Developer"
+        },
+        {
             "name": "Jan-Christoph Borchardt",
-            "name": "Camila San"
+            "email": "hey@jancborchardt.net",
+            "homepage": "http://jancborchardt.net",
+            "role": "Designer"
+        },
+        {
+            "name": "Camila Ayres",
+            "email": "hello@camila.codes",
+            "homepage": "http://camila.codes",
+            "role": "Developer"
         }
     ],
     "require": {},

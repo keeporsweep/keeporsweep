@@ -150,7 +150,24 @@ var KeepOrSweep = KeepOrSweep || {};
 				var path = this.file.path + this.file.name;
 				manager.sweepElement(path);
 				this.next();
+			},
+			// Keyboard shortcuts thanks to https://vuejsdevelopers.com/2017/05/01/vue-js-cant-help-head-body/
+			keyListener: function(evt) {
+				// Keep: Space, →, Enter
+				if(evt.keyCode === 32 || evt.keyCode === 39 || evt.keyCode === 13) {
+					this.keep();
+				}
+				// Sweep: Delete, ←
+				if(evt.keyCode === 46 || evt.keyCode === 37) {
+					this.sweep();
+				}
 			}
+		},
+		created: function() {
+			document.addEventListener('keyup', this.keyListener);
+		},
+		destroyed: function() {
+			document.removeEventListener('keyup', this.keyListener);
 		}
 	});
 

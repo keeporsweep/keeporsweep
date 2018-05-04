@@ -31,7 +31,7 @@ var KeepOrSweep = KeepOrSweep || {};
 			);
 		},
                 _onPreviewLoad: function(url){
-			$(this._containerActive).attr('style', 'background-image:url(' + url + ')');
+			$(this._containerActive).attr('style', 'background-image:url("' + url + '")');
                 },
 		_loadPreview: function(index) {
 			var self = this;
@@ -47,7 +47,7 @@ var KeepOrSweep = KeepOrSweep || {};
 			var iconImg = new Image();
 			const iconUrl = OC.MimeType.getIconUrl(self._list[index].mimetype);
 			iconImg.src = iconUrl;
-			$(this._containerActive).attr('style', 'background-image:url(' + iconUrl + ')');
+			$(this._containerActive).attr('style', 'background-image:url("' + iconUrl + '")');
 
 			// Try to get the preview if it is an image or a text file
 			if(self._list[index].mimetype == 'image/jpeg' ||

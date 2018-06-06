@@ -20,7 +20,6 @@
 	background-color: #fff;
 	filter: drop-shadow(0 1px 2px $color-box-shadow);
 	border-radius: $border-radius;
-	overflow: hidden;
 	position: absolute;
 	margin-top: -77px;
 	margin-bottom: 16px;
@@ -66,6 +65,8 @@
 	background-size: 250px;
 	background-repeat: no-repeat;
 	background-position: center;
+	border-top-left-radius: $border-radius;
+	border-top-right-radius: $border-radius;
 
 	&.element-preview-icon {
 		background-size: 128px;
@@ -93,7 +94,6 @@
 }
 
 .action-container {
-	position: absolute;
 	margin-top: 350px;
 }
 

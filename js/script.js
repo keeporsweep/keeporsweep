@@ -155,11 +155,11 @@ var KeepOrSweep = KeepOrSweep || {};
 			keyListener: function(evt) {
 				// Keep: Space, →, Enter
 				if(evt.keyCode === 32 || evt.keyCode === 39 || evt.keyCode === 13) {
-					this.keep();
+					manager.keep();
 				}
 				// Sweep: Delete, ←
 				if(evt.keyCode === 46 || evt.keyCode === 37) {
-					this.sweep();
+					manager.sweep();
 				}
 			}
 		},

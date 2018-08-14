@@ -1,4 +1,4 @@
-<div id="keeporsweep-app" class="animated bounceInUp">
+<div id="app-content" class="animated bounceInUp">
 	<div class="element-container element-container-1 animated active">
 		<div class="element-preview"></div>
 		<div class="element-name">{{ file.name }}</div>

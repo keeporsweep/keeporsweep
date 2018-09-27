@@ -128,8 +128,8 @@ var KeepOrSweep = KeepOrSweep || {};
 	var manager = new Manager();
 
 	var app = new Vue({
-		el: '#keeporsweep-app',
-		container: '#keeporsweep-app .element-container',
+		el: '#app-content',
+		container: '#app-content .element-container',
 		data: {
 			file: {},
 			actionKeepHover: false,

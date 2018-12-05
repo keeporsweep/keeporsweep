@@ -1,8 +1,9 @@
 <?php
-script('keeporsweep', 'vue');
-script('keeporsweep', 'script');
-style('keeporsweep', 'style');
-style('keeporsweep', 'animate.min');
+script('keeporsweep', 'manifest');
+script('keeporsweep', 'vendor');
+script('keeporsweep', 'app');
+style('keeporsweep', 'app');
 ?>
 
-<?php print_unescaped($this->inc('content/index')); ?>
+<div id="app-content">
+</div>

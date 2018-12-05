@@ -4,17 +4,16 @@
     <id>keeporsweep</id>
     <name>Keep or Sweep</name>
     <summary>☁️🔀🗑️ Randomly clean your Nextcloud data</summary>
-    <description><![CDATA[![](https://raw.githubusercontent.com/keeporsweep/keeporsweep.net/master/images/icon-128.png)
-
+    <description><![CDATA[
 **Tech companies help you amass data – we help you clean it by having fun while getting things done! 😊** You will see one random element of your data at a time and you decide whether to ✅keep or ❌sweep it.
 
 Currently this works for Files, and we have [plans to integrate many more sources](http://keeporsweep.net) – come join and contribute! 😍]]></description>
 
-    <version>0.2.0</version>
+    <version>0.2.1</version>
     <licence>AGPL</licence>
     <author mail="martin@siarp.de" homepage="https://xmartin.de">Martin Stadler</author>
     <author mail="hey@jancborchardt.net" homepage="https://jancborchardt.net">Jan-Christoph Borchardt</author>
-    <author mail="hello@camila.codes" homepage="http://camila.codes">Camila Ayres</author>
+    <author mail="hello@camila.codes" homepage="http://camilasan.com">Camila Ayres</author>
     <namespace>KeepOrSweep</namespace>
 
     <category>files</category>
@@ -34,7 +33,7 @@ Currently this works for Files, and we have [plans to integrate many more source
     </documentation>
 
     <dependencies>
-        <nextcloud min-version="14" max-version="15"/>
+        <nextcloud min-version="14" max-version="17"/>
     </dependencies>
 
     <navigations>

@@ -5,6 +5,7 @@ use OCP\IRequest;
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\AppFramework\Http\DataResponse;
 use OCP\AppFramework\Controller;
+use OCP\AppFramework\Http\ContentSecurityPolicy;
 
 class PageController extends Controller {
 	private $userId;
@@ -25,7 +26,12 @@ class PageController extends Controller {
 	 * @NoCSRFRequired
 	 */
 	public function index() {
-		return new TemplateResponse('keeporsweep', 'index');  // templates/index.php
+		$response = new TemplateResponse('keeporsweep', 'index');  // templates/index.php
+		$csp = new ContentSecurityPolicy();
+		$csp->allowEvalScript(true);
+		$response->setContentSecurityPolicy($csp);
+
+		return $response;
 	}
 
 }

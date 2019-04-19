@@ -5,5 +5,5 @@ script('keeporsweep', 'vendor');
 script('keeporsweep', 'app');
 ?>
 
-<div id="app">
+<div id="app-content">
 </div>

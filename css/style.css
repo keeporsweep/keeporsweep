@@ -17,9 +17,9 @@
 }
 
 .element-container {
-	background-color: #fff;
-	filter: drop-shadow(0 1px 2px $color-box-shadow);
-	border-radius: $border-radius;
+	background-color: var(--color-main-background);
+	filter: drop-shadow(0 1px 2px var(--color-box-shadow));
+	border-radius: var(--border-radius-large);
 	position: absolute;
 	margin-top: -77px;
 	margin-bottom: 16px;
@@ -52,12 +52,12 @@
 	z-index: -99999999999;
 	filter: none;
 	text-align: center;
+}
 
-	.element-empty {
-		height: 200px;
-		background-size: 64px;
-		background-position: bottom center;
-	}
+.element-container-empty .element-empty {
+	height: 200px;
+	background-size: 64px;
+	background-position: bottom center;
 }
 
 .element-preview {
@@ -65,12 +65,11 @@
 	background-size: 250px;
 	background-repeat: no-repeat;
 	background-position: center;
-	border-top-left-radius: $border-radius;
-	border-top-right-radius: $border-radius;
-
-	&.element-preview-icon {
-		background-size: 128px;
-	}
+	border-top-left-radius: var(--border-radius-large);
+	border-top-right-radius: var(--border-radius-large);
+}
+.element-preview.element-preview-icon {
+	background-size: 128px;
 }
 
 .element-name,
@@ -87,10 +86,10 @@
 }
 
 .element-detail {
+	color: var(--color-text-maxcontrast);
 	padding-top: 0;
 	padding-left: 32px;
 	background-position: 12px 2px;
-	opacity: .5;
 }
 
 .action-container {
@@ -102,7 +101,7 @@
 	width: 70px;
 	height: 70px;
 	padding: 42px 0 16px;
-	color: #fff;
+	color: var(--color-primary-text);
 	background-size: 32px;
 	background-position: center 12px !important;
 	border-radius: 50%;
@@ -110,26 +109,27 @@
 }
 
 .action-sweep {
-	background-color: $color-error;
+	background-color: var(--color-error);
+}
 
-	&:hover,
-	&:focus {
-		background-color: nc-darken($color-error, 5%);
-	}
-	&:active {
-		background-color: nc-darken($color-error, 10%) !important;
-	}
+.action-sweep:hover,
+.action-sweep:focus {
+	filter: brightness(95%);
+}
+
+.action-sweep:active {
+	filter: brightness(90%);
 }
 
 .action-keep {
-	background-color: $color-primary;
+	background-color: var(--color-primary-element);
 	margin-left: 32px;
+}
 
-	&:hover,
-	&:focus {
-		background-color: nc-darken($color-primary, 5%);
-	}
-	&:active {
-		background-color: nc-darken($color-primary, 10%) !important;
-	}
+.action-keep:hover,
+.action-keep:focus {
+	filter: brightness(95%);
+}
+.action-keep:active {
+	filter: brightness(90%);
 }

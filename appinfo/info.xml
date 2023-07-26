@@ -33,7 +33,7 @@ Currently this works for Files, and we have [plans to integrate many more source
     </documentation>
 
     <dependencies>
-        <nextcloud min-version="24" max-version="28"/>
+        <nextcloud min-version="24" max-version="30"/>
     </dependencies>
 
     <navigations>

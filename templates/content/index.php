@@ -2,22 +2,22 @@
 	<div class="element-container element-container-1 animated active">
 		<div class="element-preview"></div>
 		<div class="element-name">{{ file.name }}</div>
-		<div class="element-detail icon-folder">{{ file.path.substring(1, file.path.length - 1) }}</div>
+		<div class="element-detail icon-folder">{{ file.path }}</div>
 	</div>
 	<div class="element-container element-container-2 animated">
 		<div class="element-preview"></div>
 		<div class="element-name">{{ file.name }}</div>
-		<div class="element-detail icon-folder">{{ file.path.substring(1, file.path.length - 1) }}</div>
+		<div class="element-detail icon-folder">{{ file.path }}</div>
 	</div>
 	<div class="element-container element-container-3 animated">
 		<div class="element-preview"></div>
 		<div class="element-name">{{ file.name }}</div>
-		<div class="element-detail icon-folder">{{ file.path.substring(1, file.path.length - 1) }}</div>
+		<div class="element-detail icon-folder">{{ file.path }}</div>
 	</div>
 	<div class="element-container element-container-4 animated">
 		<div class="element-preview"></div>
 		<div class="element-name">{{ file.name }}</div>
-		<div class="element-detail icon-folder">{{ file.path.substring(1, file.path.length - 1) }}</div>
+		<div class="element-detail icon-folder">{{ file.path }}</div>
 	</div>
 	<div class="element-container element-container-empty">
 		<div class="element-empty icon-favorite"></div>

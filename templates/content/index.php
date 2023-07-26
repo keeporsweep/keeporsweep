@@ -22,7 +22,7 @@
 	<div class="element-container element-container-empty">
 		<div class="element-empty icon-favorite"></div>
 		<div class="element-name">That’s all!</div>
-		<div class="element-detail">Refresh to go through your data again</div>
+		<div class="element-detail">Refresh to go again!</div>
 	</div>
 	<div class="action-container">
 		<button v-on:click="sweep"

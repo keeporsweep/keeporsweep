@@ -11,9 +11,9 @@ Currently this works for Files, and we have [plans to integrate many more source
 
     <version>0.3.0</version>
     <licence>AGPL</licence>
-    <author mail="martin@siarp.de" homepage="https://xmartin.de">Martin Stadler</author>
-    <author mail="hey@jancborchardt.net" homepage="https://jancborchardt.net">Jan-Christoph Borchardt</author>
-    <author mail="hello@camila.codes" homepage="http://camilasan.com">Camila Ayres</author>
+    <author homepage="https://xmartin.de">Martin Stadler</author>
+    <author homepage="https://jancborchardt.net">Jan C. Borchardt</author>
+    <author homepage="http://camilasan.com">Camila Ayres</author>
     <namespace>KeepOrSweep</namespace>
 
     <category>files</category>
